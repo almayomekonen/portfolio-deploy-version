@@ -15,13 +15,16 @@ export default function App() {
     const token = localStorage.getItem("token");
 
     async function verifyUser() {
-      const response = await fetch("http://localhost:4000/api/users/verify", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        "https://portfolio-deploy-version.onrender.com/api/users/verify",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       if (!response.ok) {
         const errorText = await response.text();
