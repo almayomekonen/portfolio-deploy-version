@@ -8,7 +8,7 @@ exports.authenticateUser = (req, res, next) => {
   }
 
   try {
-    const verified = jwt.verify(token, "supersecretkey");
+    const verified = jwt.verify(token, process.env.JWT_KEY);
     req.user = verified;
 
     next();

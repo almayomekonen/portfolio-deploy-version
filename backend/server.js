@@ -2,17 +2,16 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const userRoutes = require("./router/userRoutes");
+require("dotenv").config();
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors());
 
 mongoose
-  .connect(
-    "mongodb+srv://almayo:7Io7qZCy4UCs4jpj@cluster0.26zhx4l.mongodb.net/users-portfolio"
-  )
+  .connect(process.env.MONGO_URL)
   .then(() => console.log("mongoose.connected thats dope!!!"))
   .catch((error) => {
     console.log(error.message);
