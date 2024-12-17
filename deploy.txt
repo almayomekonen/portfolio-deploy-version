@@ -1,0 +1,13 @@
+step 1. account on render connect with github and add the repository.
+
+step 2. configure render.
+
+step 3. add env variables.
+
+step 4. replacing the frontend url with the render url
+
+step 5. runnning npm run build on the frontend
+
+step 6. upload the build folder to netlify
+
+step 7. if it fails add _redirects file inside a public folder
